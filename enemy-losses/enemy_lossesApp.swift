@@ -11,7 +11,7 @@ import SwiftUI
 struct enemy_lossesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }

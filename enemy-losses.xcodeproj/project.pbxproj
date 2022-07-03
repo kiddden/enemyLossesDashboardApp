@@ -8,17 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		80562782287219FB001F7356 /* enemy_lossesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80562781287219FB001F7356 /* enemy_lossesApp.swift */; };
-		80562784287219FB001F7356 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80562783287219FB001F7356 /* ContentView.swift */; };
+		80562784287219FB001F7356 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80562783287219FB001F7356 /* MainView.swift */; };
 		80562786287219FC001F7356 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80562785287219FC001F7356 /* Assets.xcassets */; };
 		80562789287219FC001F7356 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80562788287219FC001F7356 /* Preview Assets.xcassets */; };
+		807450A02872622900A7CF4F /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8074509F2872622900A7CF4F /* RingView.swift */; };
+		80EB304228723AE0003D151C /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB304128723AE0003D151C /* WidgetView.swift */; };
+		80EB304428723AEF003D151C /* MainWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB304328723AEF003D151C /* MainWidgetView.swift */; };
+		80EB3046287253D4003D151C /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB3045287253D4003D151C /* BottomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8056277E287219FB001F7356 /* enemy-losses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "enemy-losses.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80562781287219FB001F7356 /* enemy_lossesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enemy_lossesApp.swift; sourceTree = "<group>"; };
-		80562783287219FB001F7356 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		80562783287219FB001F7356 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		80562785287219FC001F7356 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80562788287219FC001F7356 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8074509F2872622900A7CF4F /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
+		80EB304128723AE0003D151C /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
+		80EB304328723AEF003D151C /* MainWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWidgetView.swift; sourceTree = "<group>"; };
+		80EB3045287253D4003D151C /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +59,11 @@
 		80562780287219FB001F7356 /* enemy-losses */ = {
 			isa = PBXGroup;
 			children = (
+				80EB304028722CFF003D151C /* DataSource */,
+				80EB303F287225E9003D151C /* ViewModels */,
+				80EB303E287225E3003D151C /* Models */,
 				80562781287219FB001F7356 /* enemy_lossesApp.swift */,
-				80562783287219FB001F7356 /* ContentView.swift */,
+				80EB303D287225DB003D151C /* Views */,
 				80562785287219FC001F7356 /* Assets.xcassets */,
 				80562787287219FC001F7356 /* Preview Content */,
 			);
@@ -65,6 +76,39 @@
 				80562788287219FC001F7356 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		80EB303D287225DB003D151C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				80562783287219FB001F7356 /* MainView.swift */,
+				80EB304128723AE0003D151C /* WidgetView.swift */,
+				80EB304328723AEF003D151C /* MainWidgetView.swift */,
+				80EB3045287253D4003D151C /* BottomView.swift */,
+				8074509F2872622900A7CF4F /* RingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		80EB303E287225E3003D151C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		80EB303F287225E9003D151C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		80EB304028722CFF003D151C /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +181,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80562784287219FB001F7356 /* ContentView.swift in Sources */,
+				807450A02872622900A7CF4F /* RingView.swift in Sources */,
+				80EB304228723AE0003D151C /* WidgetView.swift in Sources */,
+				80562784287219FB001F7356 /* MainView.swift in Sources */,
+				80EB3046287253D4003D151C /* BottomView.swift in Sources */,
 				80562782287219FB001F7356 /* enemy_lossesApp.swift in Sources */,
+				80EB304428723AEF003D151C /* MainWidgetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +315,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"enemy-losses/Preview Content\"";
-				DEVELOPMENT_TEAM = ZQ532X6DQG;
+				DEVELOPMENT_TEAM = 5L3P894NU4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -280,7 +328,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.-eugene-ned-.enemy-losses";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.triple-k.enemy-losses";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -296,7 +344,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"enemy-losses/Preview Content\"";
-				DEVELOPMENT_TEAM = ZQ532X6DQG;
+				DEVELOPMENT_TEAM = 5L3P894NU4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -309,7 +357,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.-eugene-ned-.enemy-losses";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.triple-k.enemy-losses";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
