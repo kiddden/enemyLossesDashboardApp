@@ -10,6 +10,10 @@ import SwiftUI
 struct MainWidgetView: View {
     @Binding var showProgressLine: Bool
     
+    @Binding var personnel: [Personnel]
+    @Binding var date: Date
+    
+    
     var killed = 35400
     var wounded: Int {
         killed * 3
@@ -20,6 +24,7 @@ struct MainWidgetView: View {
     }
     
     var body: some View {
+        var currentDateLoss = personnel.filter { $0.date == DateFormatter().string(from: date) }
         HStack {
             VStack(alignment: .leading) {
                 Text("Personell")
@@ -38,6 +43,9 @@ struct MainWidgetView: View {
         .cornerRadius(20)
         .shadow(radius: 10)
         .padding()
+        .onAppear {
+            print(currentDateLoss)
+        }
     }
 }
 
