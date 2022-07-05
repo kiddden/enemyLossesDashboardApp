@@ -8,25 +8,30 @@
 import SwiftUI
 
 struct MainWidgetView: View {
+    @Binding var showProgressLine: Bool
+    
+    var killed = 35400
+    var wounded: Int {
+        killed * 3
+    }
+    var pow = 498
+    var totalHumanLosses: Int {
+        killed + wounded + pow
+    }
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
                 Text("Personell")
-                Text("~10000")
+                Text("~\(totalHumanLosses)")
                 Divider()
                     .frame(width: 120, alignment: .leading)
-                Text("35000 killed")
-                Text("~123091823 kounded")
-                Text("498 inprisoned")
+                Text("\(killed) killed")
+                Text("~\(wounded) wounded")
+                Text("\(pow) imprisoned")
             }
             .padding()
-            ZStack {
-                Circle()
-                    .frame(width: 120, height: 120)
-                Text("50%")
-                    .foregroundColor(.white)
-                    .font(.title)
-            }
+            RingView(color1: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1) , color2: #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1), size: 80, percent: 75, showProgressLine: $showProgressLine)
             .padding()
         }
         .background(.white)
@@ -36,8 +41,8 @@ struct MainWidgetView: View {
     }
 }
 
-struct MainWidgetView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainWidgetView()
-    }
-}
+//struct MainWidgetView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MainWidgetView()
+//    }
+//}

@@ -12,9 +12,12 @@
 		80562786287219FC001F7356 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80562785287219FC001F7356 /* Assets.xcassets */; };
 		80562789287219FC001F7356 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80562788287219FC001F7356 /* Preview Assets.xcassets */; };
 		807450A02872622900A7CF4F /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8074509F2872622900A7CF4F /* RingView.swift */; };
+		80868F4A2872BFF900D0BE77 /* EquipmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80868F492872BFF900D0BE77 /* EquipmentModel.swift */; };
 		80EB304228723AE0003D151C /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB304128723AE0003D151C /* WidgetView.swift */; };
 		80EB304428723AEF003D151C /* MainWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB304328723AEF003D151C /* MainWidgetView.swift */; };
 		80EB3046287253D4003D151C /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB3045287253D4003D151C /* BottomView.swift */; };
+		80FAD84B28749E0700CA8B6A /* PersonnelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FAD84A28749E0600CA8B6A /* PersonnelModel.swift */; };
+		80FAD84D28749ECD00CA8B6A /* FetcherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FAD84C28749ECD00CA8B6A /* FetcherViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,9 +27,12 @@
 		80562785287219FC001F7356 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80562788287219FC001F7356 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8074509F2872622900A7CF4F /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
+		80868F492872BFF900D0BE77 /* EquipmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentModel.swift; sourceTree = "<group>"; };
 		80EB304128723AE0003D151C /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
 		80EB304328723AEF003D151C /* MainWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWidgetView.swift; sourceTree = "<group>"; };
 		80EB3045287253D4003D151C /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
+		80FAD84A28749E0600CA8B6A /* PersonnelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonnelModel.swift; sourceTree = "<group>"; };
+		80FAD84C28749ECD00CA8B6A /* FetcherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetcherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +65,6 @@
 		80562780287219FB001F7356 /* enemy-losses */ = {
 			isa = PBXGroup;
 			children = (
-				80EB304028722CFF003D151C /* DataSource */,
 				80EB303F287225E9003D151C /* ViewModels */,
 				80EB303E287225E3003D151C /* Models */,
 				80562781287219FB001F7356 /* enemy_lossesApp.swift */,
@@ -93,6 +98,8 @@
 		80EB303E287225E3003D151C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				80868F492872BFF900D0BE77 /* EquipmentModel.swift */,
+				80FAD84A28749E0600CA8B6A /* PersonnelModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -100,15 +107,9 @@
 		80EB303F287225E9003D151C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				80FAD84C28749ECD00CA8B6A /* FetcherViewModel.swift */,
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		80EB304028722CFF003D151C /* DataSource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,7 +184,10 @@
 			files = (
 				807450A02872622900A7CF4F /* RingView.swift in Sources */,
 				80EB304228723AE0003D151C /* WidgetView.swift in Sources */,
+				80868F4A2872BFF900D0BE77 /* EquipmentModel.swift in Sources */,
+				80FAD84D28749ECD00CA8B6A /* FetcherViewModel.swift in Sources */,
 				80562784287219FB001F7356 /* MainView.swift in Sources */,
+				80FAD84B28749E0700CA8B6A /* PersonnelModel.swift in Sources */,
 				80EB3046287253D4003D151C /* BottomView.swift in Sources */,
 				80562782287219FB001F7356 /* enemy_lossesApp.swift in Sources */,
 				80EB304428723AEF003D151C /* MainWidgetView.swift in Sources */,

@@ -8,18 +8,35 @@
 import SwiftUI
 
 struct MainView: View {
-    @State var showBottomView = false
+    @State private var showBottomView = false
     @State var bottomViewPosition = CGSize.zero
+    @State var mainViewPosition = CGSize.zero
     @State var showFullBottomView = false
+    
+    @State var showProgressLineOnStart = true
+    
+    @State var personnel: [Personnel] = []
+    @State var equipment: [Equipment] = []
+    
+    
     
     var body: some View {
         ZStack {
+            
+            Rectangle()
+                .offset(y: -510)
+                .foregroundColor(.indigo)
             VStack {
-                Text("Enemy losses")
+                DatePicker(selection: /*@START_MENU_TOKEN@*/.constant(Date())/*@END_MENU_TOKEN@*/, label: { /*@START_MENU_TOKEN@*/Text("Date")/*@END_MENU_TOKEN@*/ })
+                    .datePickerStyle(CompactDatePickerStyle())
+                    
+                Text("🔥ENEMY LOSSES🔥")
+                    .bold()
                 Divider()
                 Spacer()
                 ScrollView {
-                    MainWidgetView()
+                    MainWidgetView(showProgressLine: $showProgressLineOnStart)
+                        .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
                     WidgetView(equipmentName: "Tanks", increaseDueToday: 7, losses: 209)
                     WidgetView(equipmentName: "MLR", increaseDueToday: 7, losses: 209)
                     WidgetView(equipmentName: "Warships", increaseDueToday: 1, losses: 15)
@@ -32,7 +49,7 @@ struct MainView: View {
             }
             .blur(radius: showBottomView ? 20 : 0)
             .animation(.default)
-            BottomView()
+            BottomView(showProgressLine: $showBottomView)
                 .offset(x: 0, y: showBottomView ? 200 : 900)
                 .offset(y: bottomViewPosition.height)
                 .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
@@ -61,7 +78,15 @@ struct MainView: View {
                         
                     }
                 )
-            Text("\(bottomViewPosition.height)")
+//            Text("\(bottomViewPosition.height)")
+        }
+        .onAppear{
+            LossesFetcher().getPersonnelLosses { (personnel) in
+                self.personnel = personnel
+            }
+            LossesFetcher().getEquipmentLosses { (equipment) in
+                self.equipment = equipment!
+            }
         }
     }
 }
