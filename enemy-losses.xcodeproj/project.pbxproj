@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80196DD22875FD6A00A2653F /* EquipmentLossesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80196DD12875FD6A00A2653F /* EquipmentLossesListView.swift */; };
+		80196DD428761C1500A2653F /* PersonnelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80196DD328761C1500A2653F /* PersonnelViewModel.swift */; };
+		80196DD628761C2200A2653F /* EquipmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80196DD528761C2200A2653F /* EquipmentViewModel.swift */; };
+		80196DD82876281100A2653F /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80196DD72876281100A2653F /* DatePickerView.swift */; };
 		80562782287219FB001F7356 /* enemy_lossesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80562781287219FB001F7356 /* enemy_lossesApp.swift */; };
 		80562784287219FB001F7356 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80562783287219FB001F7356 /* MainView.swift */; };
 		80562786287219FC001F7356 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80562785287219FC001F7356 /* Assets.xcassets */; };
@@ -21,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		80196DD12875FD6A00A2653F /* EquipmentLossesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentLossesListView.swift; sourceTree = "<group>"; };
+		80196DD328761C1500A2653F /* PersonnelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonnelViewModel.swift; sourceTree = "<group>"; };
+		80196DD528761C2200A2653F /* EquipmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentViewModel.swift; sourceTree = "<group>"; };
+		80196DD72876281100A2653F /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		8056277E287219FB001F7356 /* enemy-losses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "enemy-losses.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80562781287219FB001F7356 /* enemy_lossesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enemy_lossesApp.swift; sourceTree = "<group>"; };
 		80562783287219FB001F7356 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -46,6 +54,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80196DD02875FC8E00A2653F /* WidgetViews */ = {
+			isa = PBXGroup;
+			children = (
+				80EB304328723AEF003D151C /* MainWidgetView.swift */,
+				80EB304128723AE0003D151C /* WidgetView.swift */,
+				80196DD12875FD6A00A2653F /* EquipmentLossesListView.swift */,
+			);
+			path = WidgetViews;
+			sourceTree = "<group>";
+		};
 		80562775287219FB001F7356 = {
 			isa = PBXGroup;
 			children = (
@@ -86,11 +104,11 @@
 		80EB303D287225DB003D151C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				80196DD02875FC8E00A2653F /* WidgetViews */,
 				80562783287219FB001F7356 /* MainView.swift */,
-				80EB304128723AE0003D151C /* WidgetView.swift */,
-				80EB304328723AEF003D151C /* MainWidgetView.swift */,
 				80EB3045287253D4003D151C /* BottomView.swift */,
 				8074509F2872622900A7CF4F /* RingView.swift */,
+				80196DD72876281100A2653F /* DatePickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -108,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				80FAD84C28749ECD00CA8B6A /* FetcherViewModel.swift */,
+				80196DD328761C1500A2653F /* PersonnelViewModel.swift */,
+				80196DD528761C2200A2653F /* EquipmentViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -186,8 +206,12 @@
 				80EB304228723AE0003D151C /* WidgetView.swift in Sources */,
 				80868F4A2872BFF900D0BE77 /* EquipmentModel.swift in Sources */,
 				80FAD84D28749ECD00CA8B6A /* FetcherViewModel.swift in Sources */,
+				80196DD22875FD6A00A2653F /* EquipmentLossesListView.swift in Sources */,
 				80562784287219FB001F7356 /* MainView.swift in Sources */,
+				80196DD428761C1500A2653F /* PersonnelViewModel.swift in Sources */,
+				80196DD628761C2200A2653F /* EquipmentViewModel.swift in Sources */,
 				80FAD84B28749E0700CA8B6A /* PersonnelModel.swift in Sources */,
+				80196DD82876281100A2653F /* DatePickerView.swift in Sources */,
 				80EB3046287253D4003D151C /* BottomView.swift in Sources */,
 				80562782287219FB001F7356 /* enemy_lossesApp.swift in Sources */,
 				80EB304428723AEF003D151C /* MainWidgetView.swift in Sources */,

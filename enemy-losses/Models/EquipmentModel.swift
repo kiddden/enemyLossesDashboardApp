@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Equipment: Codable {
+
+struct Equipment: Encodable, Decodable {
     var date: String
     var day: Int
     var aircraft: Int
@@ -27,7 +28,7 @@ struct Equipment: Codable {
     var cruiseMissiles: Int?
     var greatestLossesDirection: String?
     
-    enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey, CaseIterable {
         case date, day, aircraft, helicopter, tank
         case apc = "APC"
         case fieldArtillery = "field artillery"
@@ -55,7 +56,7 @@ struct Equipment: Codable {
             apc = try container.decode(Int.self, forKey: .apc)
             fieldArtillery = try container.decode(Int.self, forKey: .fieldArtillery)
             mrl = try container.decode(Int.self, forKey: .mrl)
-
+            
             drone = try container.decode(Int.self, forKey: .drone)
             navalShip = try container.decode(Int.self, forKey: .navalShip)
             antiAircraftWarfare = try container.decode(Int.self, forKey: .antiAircraftWarfare)
@@ -66,7 +67,7 @@ struct Equipment: Codable {
             vehiclesAndFuelTanks = try? container.decode(Int.self, forKey: .vehiclesAndFuelTanks)
             cruiseMissiles = try? container.decode(Int.self, forKey: .cruiseMissiles)
             greatestLossesDirection = try? container.decode(String.self, forKey: .greatestLossesDirection)
-
+            
         } catch DecodingError.typeMismatch {
             let string = try container.decode(String.self, forKey: .day)
             if let int = Int(string) {
@@ -79,7 +80,7 @@ struct Equipment: Codable {
                 apc = try container.decode(Int.self, forKey: .apc)
                 fieldArtillery = try container.decode(Int.self, forKey: .fieldArtillery)
                 mrl = try container.decode(Int.self, forKey: .mrl)
-
+                
                 drone = try container.decode(Int.self, forKey: .drone)
                 navalShip = try container.decode(Int.self, forKey: .navalShip)
                 antiAircraftWarfare = try container.decode(Int.self, forKey: .antiAircraftWarfare)
@@ -94,6 +95,13 @@ struct Equipment: Codable {
                 throw DecodingError.dataCorruptedError(forKey: .day, in: container, debugDescription: "ERROR DAY DECODING")
             }
         }
+    }
+}
+
+extension Encodable {
+    var dict: [String: Any]? {
+        guard let data = try? JSONEncoder().encode(self) else { return nil }
+        return (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)).flatMap { $0 as? [String: Any] }
     }
 }
 

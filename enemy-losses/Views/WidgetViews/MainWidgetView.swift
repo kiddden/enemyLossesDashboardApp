@@ -19,9 +19,6 @@ struct MainWidgetView: View {
     }
     
     
-    var killed = 35400
-    
-    
     var body: some View {
         HStack {
             VStack(alignment: .leading) {

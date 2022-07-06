@@ -15,64 +15,33 @@ struct MainView: View {
     
     @State var showProgressLineOnStart = true
     
-    @State var personnel: [Personnel] = []
-    @State var equipment: [Equipment] = []
+    @StateObject var personnelViewModel = PersonnelViewModel()
+    @StateObject var equipmentViewModel = EquipmentViewModel()
     @State var chosenDate = Date()
-    
-    
     
     var body: some View {
         ZStack {
-            
             Rectangle()
                 .offset(y: -510)
                 .foregroundColor(.indigo)
             VStack {
-                    
                 Text("🔥ENEMY LOSSES🔥")
                     .bold()
-                HStack {
-                    Button {
-                        var dateComponent = DateComponents()
-                        dateComponent.day = -1
-                        chosenDate = Calendar.current.date(byAdding: dateComponent, to: chosenDate) ?? Date()
-                    } label: {
-                        Image(systemName: "chevron.left")
-                            .foregroundColor(.black)
-                            .padding(.horizontal)
-                    }
-                    Spacer()
-                    DatePicker(selection: $chosenDate,
-                               in: ...Date(),
-                               displayedComponents: .date) {}
-                        .labelsHidden()
-                    Spacer()
-                    Button {
-                        var dateComponent = DateComponents()
-                        dateComponent.day = 1
-                        chosenDate = Calendar.current.date(byAdding: dateComponent, to: chosenDate) ?? Date()
-                        print(chosenDate)
-                    } label: {
-                        Image(systemName: "chevron.right")
-                            .foregroundColor(.black)
-                            .padding(.horizontal)
-                    }
-                }
+                DatePickerView(startDate: personnelViewModel.startDate,
+                               endDate: personnelViewModel.endDate,
+                               chosenDate: $chosenDate)
                 Divider()
                 Spacer()
                 ScrollView {
-                    
-                    MainWidgetView(showProgressLine: $showProgressLineOnStart, personnel: $personnel, date: $chosenDate)
+                    MainWidgetView(showProgressLine: $showProgressLineOnStart,
+                                   personnel: $personnelViewModel.personnel,
+                                   date: $chosenDate)
                         .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
-                    WidgetView(equipmentName: "Tanks", increaseDueToday: 7, losses: 209)
-                    WidgetView(equipmentName: "MLR", increaseDueToday: 7, losses: 209)
-                    WidgetView(equipmentName: "Warships", increaseDueToday: 1, losses: 15)
-                    WidgetView(equipmentName: "Airplanes", increaseDueToday: 7, losses: 209)
+                    EquipmentLossesListView(equipment: $equipmentViewModel.equipment, date: $chosenDate)
                 }
                 .onTapGesture {
                     showBottomView.toggle()
                 }
-                
             }
             .blur(radius: showBottomView ? 20 : 0)
             .animation(.default)
@@ -91,30 +60,30 @@ struct MainView: View {
                         }
                         
                     }
-                    .onEnded { value in
-                        if bottomViewPosition.height > 50 {
-                            self.showBottomView = false
+                        .onEnded { value in
+                            if bottomViewPosition.height > 50 {
+                                self.showBottomView = false
+                            }
+                            if (bottomViewPosition.height < -50 && !self.showFullBottomView) {
+                                self.bottomViewPosition.height = -210
+                                self.showFullBottomView = true
+                            } else {
+                                self.bottomViewPosition = .zero
+                                self.showFullBottomView = false
+                            }
+                            
                         }
-                        if (bottomViewPosition.height < -50 && !self.showFullBottomView) {
-                            self.bottomViewPosition.height = -210
-                            self.showFullBottomView = true
-                        } else {
-                            self.bottomViewPosition = .zero
-                            self.showFullBottomView = false
-                        }
-                        
-                    }
                 )
-//            Text("\(bottomViewPosition.height)")
+            //            Text("\(bottomViewPosition.height)")
         }
         .onAppear{
-            LossesFetcher().getPersonnelLosses { (personnel) in
-                self.personnel = personnel
+            personnelViewModel.getPersonnelLosses { (personnel) in
+                self.personnelViewModel.personnel = personnel
             }
-            LossesFetcher().getEquipmentLosses { (equipment) in
-                self.equipment = equipment!
+            print(personnelViewModel.endDate)
+            equipmentViewModel.getEquipmentLosses { (equipment) in
+                self.equipmentViewModel.equipment = equipment
             }
-            print(chosenDate)
         }
     }
 }
