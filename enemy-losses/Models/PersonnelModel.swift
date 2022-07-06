@@ -12,4 +12,10 @@ struct Personnel: Decodable {
     var day: Int
     var personnel: Int
     var POW: Int
+    var wounded: Int {
+        personnel * 3
+    }
+    var totalHumanLosses: Int {
+        personnel + wounded + POW
+    }
 }

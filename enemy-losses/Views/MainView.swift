@@ -17,6 +17,7 @@ struct MainView: View {
     
     @State var personnel: [Personnel] = []
     @State var equipment: [Equipment] = []
+    @State var chosenDate = Date()
     
     
     
@@ -27,15 +28,41 @@ struct MainView: View {
                 .offset(y: -510)
                 .foregroundColor(.indigo)
             VStack {
-                DatePicker(selection: /*@START_MENU_TOKEN@*/.constant(Date())/*@END_MENU_TOKEN@*/, label: { /*@START_MENU_TOKEN@*/Text("Date")/*@END_MENU_TOKEN@*/ })
-                    .datePickerStyle(CompactDatePickerStyle())
                     
                 Text("🔥ENEMY LOSSES🔥")
                     .bold()
+                HStack {
+                    Button {
+                        var dateComponent = DateComponents()
+                        dateComponent.day = -1
+                        chosenDate = Calendar.current.date(byAdding: dateComponent, to: chosenDate) ?? Date()
+                    } label: {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(.black)
+                            .padding(.horizontal)
+                    }
+                    Spacer()
+                    DatePicker(selection: $chosenDate,
+                               in: ...Date(),
+                               displayedComponents: .date) {}
+                        .labelsHidden()
+                    Spacer()
+                    Button {
+                        var dateComponent = DateComponents()
+                        dateComponent.day = 1
+                        chosenDate = Calendar.current.date(byAdding: dateComponent, to: chosenDate) ?? Date()
+                        print(chosenDate)
+                    } label: {
+                        Image(systemName: "chevron.right")
+                            .foregroundColor(.black)
+                            .padding(.horizontal)
+                    }
+                }
                 Divider()
                 Spacer()
                 ScrollView {
-                    MainWidgetView(showProgressLine: $showProgressLineOnStart)
+                    
+                    MainWidgetView(showProgressLine: $showProgressLineOnStart, personnel: $personnel, date: $chosenDate)
                         .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
                     WidgetView(equipmentName: "Tanks", increaseDueToday: 7, losses: 209)
                     WidgetView(equipmentName: "MLR", increaseDueToday: 7, losses: 209)
@@ -87,6 +114,7 @@ struct MainView: View {
             LossesFetcher().getEquipmentLosses { (equipment) in
                 self.equipment = equipment!
             }
+            print(chosenDate)
         }
     }
 }

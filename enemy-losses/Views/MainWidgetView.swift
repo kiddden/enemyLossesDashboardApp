@@ -12,28 +12,28 @@ struct MainWidgetView: View {
     
     @Binding var personnel: [Personnel]
     @Binding var date: Date
+    var formattedDate: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.string(from: date)
+    }
     
     
     var killed = 35400
-    var wounded: Int {
-        killed * 3
-    }
-    var pow = 498
-    var totalHumanLosses: Int {
-        killed + wounded + pow
-    }
+    
     
     var body: some View {
-        var currentDateLoss = personnel.filter { $0.date == DateFormatter().string(from: date) }
         HStack {
             VStack(alignment: .leading) {
-                Text("Personell")
-                Text("~\(totalHumanLosses)")
-                Divider()
-                    .frame(width: 120, alignment: .leading)
-                Text("\(killed) killed")
-                Text("~\(wounded) wounded")
-                Text("\(pow) imprisoned")
+                if let currentDateLoss = personnel.first(where: {$0.date == formattedDate}) {
+                    Text("Personell")
+                    Text("~\(currentDateLoss.totalHumanLosses)")
+                    Divider()
+                        .frame(width: 120, alignment: .leading)
+                    Text("\(currentDateLoss.personnel) killed")
+                    Text("~\(currentDateLoss.wounded) wounded")
+                    Text("\(currentDateLoss.POW) imprisoned")
+                }
             }
             .padding()
             RingView(color1: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1) , color2: #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1), size: 80, percent: 75, showProgressLine: $showProgressLine)
@@ -43,9 +43,7 @@ struct MainWidgetView: View {
         .cornerRadius(20)
         .shadow(radius: 10)
         .padding()
-        .onAppear {
-            print(currentDateLoss)
-        }
+        
     }
 }
 
