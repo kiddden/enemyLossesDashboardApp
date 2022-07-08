@@ -44,4 +44,10 @@ class PersonnelViewModel: ObservableObject {
             }
             .resume()
         }
+    
+    init() {
+         getPersonnelLosses { (personnel) in
+            self.personnel = personnel
+        }
+    }
 }

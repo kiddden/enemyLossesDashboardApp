@@ -27,6 +27,23 @@ struct Equipment: Encodable, Decodable {
     var vehiclesAndFuelTanks: Int?
     var cruiseMissiles: Int?
     var greatestLossesDirection: String?
+    var detailedInfo = [
+        "aircraft": "",
+        "helicopter": "",
+        "tank": "",
+        "APC": "",
+        "field artillery": "",
+        "MRL": "",
+        "military auto": "",
+        "fuel tank": "",
+        "drone": "",
+        "naval ship": "",
+        "anti-aircraft warfare": "",
+        "special equipment": "",
+        "mobile SRBM system": "",
+        "vehicles and fuel tanks": "",
+        "cruise missiles": ""
+    ]
     
     enum CodingKeys: String, CodingKey, CaseIterable {
         case date, day, aircraft, helicopter, tank

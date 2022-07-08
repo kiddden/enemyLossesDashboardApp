@@ -9,9 +9,8 @@ import SwiftUI
 
 struct MainView: View {
     @State private var showBottomView = false
-    @State var bottomViewPosition = CGSize.zero
+    
     @State var mainViewPosition = CGSize.zero
-    @State var showFullBottomView = false
     
     @State var showProgressLineOnStart = true
     
@@ -37,7 +36,7 @@ struct MainView: View {
                                    personnel: $personnelViewModel.personnel,
                                    date: $chosenDate)
                         .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
-                    EquipmentLossesListView(equipment: $equipmentViewModel.equipment, date: $chosenDate)
+                    EquipmentLossesListView(equipment: $equipmentViewModel.equipment, date: $chosenDate, showBottomView: $showBottomView)
                 }
                 .onTapGesture {
                     showBottomView.toggle()
@@ -45,45 +44,11 @@ struct MainView: View {
             }
             .blur(radius: showBottomView ? 20 : 0)
             .animation(.default)
-            BottomView(showProgressLine: $showBottomView)
-                .offset(x: 0, y: showBottomView ? 200 : 900)
-                .offset(y: bottomViewPosition.height)
-                .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
-                .gesture(
-                    DragGesture().onChanged { value in
-                        self.bottomViewPosition = value.translation
-                        if self.showFullBottomView {
-                            self.bottomViewPosition.height += -210
-                        }
-                        if self.bottomViewPosition.height < -210 {
-                            self.bottomViewPosition.height = -210
-                        }
-                        
-                    }
-                        .onEnded { value in
-                            if bottomViewPosition.height > 50 {
-                                self.showBottomView = false
-                            }
-                            if (bottomViewPosition.height < -50 && !self.showFullBottomView) {
-                                self.bottomViewPosition.height = -210
-                                self.showFullBottomView = true
-                            } else {
-                                self.bottomViewPosition = .zero
-                                self.showFullBottomView = false
-                            }
-                            
-                        }
-                )
+            
             //            Text("\(bottomViewPosition.height)")
         }
         .onAppear{
-            personnelViewModel.getPersonnelLosses { (personnel) in
-                self.personnelViewModel.personnel = personnel
-            }
             print(personnelViewModel.endDate)
-            equipmentViewModel.getEquipmentLosses { (equipment) in
-                self.equipmentViewModel.equipment = equipment
-            }
         }
     }
 }
