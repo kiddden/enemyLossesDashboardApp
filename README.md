@@ -37,6 +37,10 @@ This is a simple and nice-looking iOS dashboard app, the main purpose of which i
 - Cruise Missiles
 - Greatest Losses Direction
 
+## Important Notices
+- Estimated amount of wounded(including lost) is calculated as personnel losses multiplied by 3. 
+3 wounded per 1 killed is known as the average killed\wounded ratio in most modern conflicts. However, this number is still not accurate.
+- Total human losses are calculated as (personnel loses * pow * wounded). Considering the fact that one variable in this equation is not accurate the total human losses indicator is very approximate as well.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
