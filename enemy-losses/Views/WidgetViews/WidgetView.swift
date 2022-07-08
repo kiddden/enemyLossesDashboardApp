@@ -18,9 +18,16 @@ struct WidgetView: View {
             HStack {
                 
                     ZStack {
-                        Circle()
-                            .frame(width: 45, height: 45)
-                        Text("✈️")
+                        RoundedRectangle(cornerRadius: 20)
+                            .foregroundColor(.indigo)
+                            .frame(width: 50, height: 50)
+                            .opacity(0.7)
+                        Image("\(equipmentName)")
+                            .resizable()
+                            .frame(width: 40, height: 40)
+//                            .scaledToFit()
+                            .foregroundColor(.black)
+                            
                     }
                     .padding(.leading, 10)
                     VStack(alignment: .leading) {
@@ -35,6 +42,7 @@ struct WidgetView: View {
                     VStack {
                         Text(String(losses))
                         Text("total")
+                            .font(.subheadline)
                     }
                     .padding()
                 }
@@ -48,8 +56,8 @@ struct WidgetView: View {
     }
 }
 
-//struct WidgetView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        WidgetView(equipmentName: "Airplanes", increaseDueToday: 7, losses: 209)
-//    }
-//}
+struct WidgetView_Previews: PreviewProvider {
+    static var previews: some View {
+        WidgetView(equipmentName: "Aircraft", increaseDueToday: 7, losses: 209)
+    }
+}

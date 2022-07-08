@@ -21,7 +21,6 @@
 		80EB304428723AEF003D151C /* MainWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB304328723AEF003D151C /* MainWidgetView.swift */; };
 		80EB3046287253D4003D151C /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB3045287253D4003D151C /* BottomView.swift */; };
 		80FAD84B28749E0700CA8B6A /* PersonnelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FAD84A28749E0600CA8B6A /* PersonnelModel.swift */; };
-		80FAD84D28749ECD00CA8B6A /* FetcherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FAD84C28749ECD00CA8B6A /* FetcherViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +39,6 @@
 		80EB304328723AEF003D151C /* MainWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWidgetView.swift; sourceTree = "<group>"; };
 		80EB3045287253D4003D151C /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
 		80FAD84A28749E0600CA8B6A /* PersonnelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonnelModel.swift; sourceTree = "<group>"; };
-		80FAD84C28749ECD00CA8B6A /* FetcherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetcherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +123,6 @@
 		80EB303F287225E9003D151C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				80FAD84C28749ECD00CA8B6A /* FetcherViewModel.swift */,
 				80196DD328761C1500A2653F /* PersonnelViewModel.swift */,
 				80196DD528761C2200A2653F /* EquipmentViewModel.swift */,
 			);
@@ -205,7 +202,6 @@
 				807450A02872622900A7CF4F /* RingView.swift in Sources */,
 				80EB304228723AE0003D151C /* WidgetView.swift in Sources */,
 				80868F4A2872BFF900D0BE77 /* EquipmentModel.swift in Sources */,
-				80FAD84D28749ECD00CA8B6A /* FetcherViewModel.swift in Sources */,
 				80196DD22875FD6A00A2653F /* EquipmentLossesListView.swift in Sources */,
 				80562784287219FB001F7356 /* MainView.swift in Sources */,
 				80196DD428761C1500A2653F /* PersonnelViewModel.swift in Sources */,
