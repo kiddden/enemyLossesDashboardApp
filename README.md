@@ -11,7 +11,7 @@ This is a simple and nice-looking iOS dashboard app, the main purpose of which i
 
 
 ## Used Technologies
-- Swift(SwiftUI)
+- SwiftUI
 - MVVM
 - JSON parsing
 ## Tracked losses
