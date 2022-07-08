@@ -25,7 +25,7 @@ struct EquipmentLossesListView: View {
             ZStack {
                 VStack {
                     ForEach(Equipment.CodingKeys.allCases, id: \.self) { equipmentType in
-                        if equipmentType != .date && equipmentType != .day {
+                        if equipmentType != .date && equipmentType != .day && equipmentType != .greatestLossesDirection {
                             let currentLossesDict = currentDateEquipmentLoss.dict
                             WidgetView(equipmentName: equipmentType.rawValue, losses: currentLossesDict?["\(equipmentType.rawValue)"] as? Int ?? 0)
                         }
