@@ -2,7 +2,8 @@
 
 This is a simple and nice-looking iOS dashboard app, the main purpose of which is to show the enemy losses in a pretty way.
 
-![alt text](https://ibb.co/WzdGG6R)
+<img src="https://github.com/kiddden/enemyLossesDashboardApp/blob/main/images/HIMARS%20waiting%20for%20prey.jpeg" alt="drawing" width="800"/>
+
 
 ## Data source
 
