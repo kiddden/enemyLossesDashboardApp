@@ -2,7 +2,7 @@
 
 This is a simple and nice-looking iOS dashboard app, the main purpose of which is to show the enemy losses in a pretty way.
 
-![alt text](https://imgur.com/hmoFDej)
+![alt text](https://ibb.co/WzdGG6R)
 
 ## Data source
 
