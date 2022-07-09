@@ -28,7 +28,7 @@ struct Equipment: Encodable, Decodable {
     var cruiseMissiles: Int?
     var greatestLossesDirection: String?
     var detailedInfo = [
-        "aircraft": "",
+        "aircraft": "egdfgdflg",
         "helicopter": "",
         "tank": "",
         "APC": "",

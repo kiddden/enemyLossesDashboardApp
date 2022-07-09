@@ -15,44 +15,42 @@ struct WidgetView: View {
     
     var body: some View {
         
-            HStack {
-                
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 20)
-                            .foregroundColor(.indigo)
-                            .frame(width: 50, height: 50)
-                            .opacity(0.7)
-                        Image("\(equipmentName)")
-                            .resizable()
-                            .frame(width: 40, height: 40)
-//                            .scaledToFit()
-                            .foregroundColor(.black)
-                            
-                    }
-                    .padding(.leading, 10)
-                    VStack(alignment: .leading) {
-                        Text(equipmentName.capitalized)
-                            .bold()
-                        Text("+\(increaseDueToday)")
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.green)
-                    }
-                    Spacer()
-                    VStack {
-                        Text(String(losses))
-                        Text("total")
-                            .font(.subheadline)
-                    }
-                    .padding()
-                }
-                
-                
-            .background(.white)
-            .cornerRadius(15)
-            .shadow(radius: 10)
-            .padding(.horizontal)
+        HStack {
             
+            ZStack {
+                RoundedRectangle(cornerRadius: 20)
+                    .foregroundColor(.indigo)
+                    .frame(width: 50, height: 50)
+                    .opacity(0.7)
+                Image("\(equipmentName)")
+                    .resizable()
+                    .frame(width: 40, height: 40)
+                //                            .scaledToFit()
+                    .foregroundColor(.black)
+                
+            }
+            .padding(.leading, 10)
+            VStack(alignment: .leading) {
+                Text(equipmentName.capitalized)
+                    .bold()
+                Text("+\(increaseDueToday)")
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.green)
+            }
+            Spacer()
+            VStack {
+                Text(String(losses))
+                Text("total")
+                    .font(.subheadline)
+            }
+            .padding()
+        }
+        .background(.white)
+        .cornerRadius(15)
+        .shadow(radius: 10)
+        .padding(.horizontal)
+        
     }
 }
 
