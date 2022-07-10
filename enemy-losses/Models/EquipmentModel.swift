@@ -80,51 +80,50 @@ struct Equipment: Encodable, Decodable {
                         """
             case .militaryAuto:
                 return """
-A military auto is any vehicle for land-based military transport and activity, including combat vehicles; both specifically designed for, or significantly used by military and armed forces.[1] Most military vehicles require off-road capabilities and/or vehicle armour (plate),[1] making them heavy, therefore some have vehicle tracks instead of being wheeled vehicles; and half-tracks have both. Furthermore, some military vehicles are amphibious, constructed for use on land and water, and sometimes also intermediate surfaces.
-                
-                Military vehicles are almost always camouflaged, or at least painted in inconspicuous colour(s). In contrast, under the Geneva Conventions, all non-combatant military vehicles, such as field ambulances and mobile first aid stations, must be properly and clearly marked as such. Under the conventions, when respected, such vehicles are legally immune from deliberate attack by all combatants.
-"""
+                        A military auto is any vehicle for land-based military transport and activity, including combat vehicles; both specifically designed for, or significantly used by military and armed forces.[1] Most military vehicles require off-road capabilities and/or vehicle armour (plate), making them heavy, therefore some have vehicle tracks instead of being wheeled vehicles; and half-tracks have both. Furthermore, some military vehicles are amphibious, constructed for use on land and water, and sometimes also intermediate surfaces.
+                        
+                        Military vehicles are almost always camouflaged, or at least painted in inconspicuous colour(s). In contrast, under the Geneva Conventions, all non-combatant military vehicles, such as field ambulances and mobile first aid stations, must be properly and clearly marked as such. Under the conventions, when respected, such vehicles are legally immune from deliberate attack by all combatants.
+                        """
             case .fuelTank:
                 return """
-A fuel tank (also called a petrol tank or gas tank) is a safe container for flammable fluids. Though any storage tank for fuel may be so called, the term is typically applied to part of an engine system in which the fuel is stored and propelled (fuel pump) or released (pressurized gas) into an engine. Fuel tanks range in size and complexity from the small plastic tank of a butane lighter to the multi-chambered cryogenic Space Shuttle external tank.
-"""
+                        A fuel tank (also called a petrol tank or gas tank) is a safe container for flammable fluids. Though any storage tank for fuel may be so called, the term is typically applied to part of an engine system in which the fuel is stored and propelled (fuel pump) or released (pressurized gas) into an engine. Fuel tanks range in size and complexity from the small plastic tank of a butane lighter to the multi-chambered cryogenic Space Shuttle external tank.
+                        """
             case .drone:
                 return """
-An unmanned combat aerial vehicle (UCAV), also known as a combat drone, colloquially shortened as drone or battlefield UAV, is an unmanned aerial vehicle (UAV) that is used for intelligence, surveillance, target acquisition, and reconnaissance and carries aircraft ordnance such as missiles, ATGMs, and/or bombs in hardpoints for drone strikes.[1][2][3] These drones are usually under real-time human control, with varying levels of autonomy.[4] Unlike unmanned surveillance and reconnaissance aerial vehicles, UCAVs are used for both drone strikes and battlefield intelligence.
-
-Aircraft of this type have no onboard human pilot.[5] As the operator runs the vehicle from a remote terminal, equipment necessary for a human pilot is not needed, resulting in a lower weight and a smaller size than a manned aircraft. Many countries have operational domestic UCAVs, and many more have imported armed drones or are in the process of developing them.[6]
-"""
+                        An unmanned combat aerial vehicle (UCAV), also known as a combat drone, colloquially shortened as drone or battlefield UAV, is an unmanned aerial vehicle (UAV) that is used for intelligence, surveillance, target acquisition, and reconnaissance and carries aircraft ordnance such as missiles, ATGMs, and/or bombs in hardpoints for drone strikes. These drones are usually under real-time human control, with varying levels of autonomy. Unlike unmanned surveillance and reconnaissance aerial vehicles, UCAVs are used for both drone strikes and battlefield intelligence.
+                        
+                        Aircraft of this type have no onboard human pilot. As the operator runs the vehicle from a remote terminal, equipment necessary for a human pilot is not needed, resulting in a lower weight and a smaller size than a manned aircraft. Many countries have operational domestic UCAVs, and many more have imported armed drones or are in the process of developing them.
+                        """
             case .navalShip:
                 return """
-A naval ship is a military ship (or sometimes boat, depending on classification) used by a navy. Naval ships are differentiated from civilian ships by construction and purpose. Generally, naval ships are damage resilient and armed with weapon systems, though armament on troop transports is light or non-existent.
-
-Naval ships designed primarily for naval warfare are termed warships, as opposed to support (auxiliary ships) or shipyard operations.
-"""
+                        A naval ship is a military ship (or sometimes boat, depending on classification) used by a navy. Naval ships are differentiated from civilian ships by construction and purpose. Generally, naval ships are damage resilient and armed with weapon systems, though armament on troop transports is light or non-existent.
+                        
+                        Naval ships designed primarily for naval warfare are termed warships, as opposed to support (auxiliary ships) or shipyard operations.
+                        """
             case .antiAircraftWarfare:
                 return """
-Anti-aircraft warfare, counter-air or air defence is the battlespace response to aerial warfare, defined by NATO as "all measures designed to nullify or reduce the effectiveness of hostile air action".[1] It includes surface based, subsurface (submarine launched), and air-based weapon systems, associated sensor systems, command and control arrangements, and passive measures (e.g. barrage balloons). It may be used to protect naval, ground, and air forces in any location. However, for most countries the main effort has tended to be homeland defence. NATO refers to airborne air defence as counter-air and naval air defence as anti-aircraft warfare. Missile defence is an extension of air defence, as are initiatives to adapt air defence to the task of intercepting any projectile in flight.
-"""
+                        Anti-aircraft warfare, counter-air or air defence is the battlespace response to aerial warfare, defined by NATO as "all measures designed to nullify or reduce the effectiveness of hostile air action". It includes surface based, subsurface (submarine launched), and air-based weapon systems, associated sensor systems, command and control arrangements, and passive measures (e.g. barrage balloons). It may be used to protect naval, ground, and air forces in any location. However, for most countries the main effort has tended to be homeland defence. NATO refers to airborne air defence as counter-air and naval air defence as anti-aircraft warfare. Missile defence is an extension of air defence, as are initiatives to adapt air defence to the task of intercepting any projectile in flight.
+                        """
             case .specialEquipment:
                 return """
-A military engineering vehicle or special military equipment is a vehicle built for construction work or for the transportation of combat engineers on the battlefield. These vehicles may be modified civilian equipment (such as the armoured bulldozers that many nations field) or purpose-built military vehicles (such as the AVRE). The first appearance of such vehicles coincided with the appearance of the first tanks, these vehicles were modified Mark V tanks for bridging and mine clearance. Modern military engineering vehicles are expected to fulfill numerous roles, as such they undertake numerous forms, examples of roles include; bulldozers, cranes, graders, excavators, dump trucks, breaching vehicles, bridging vehicles, military ferries, amphibious crossing vehicles, and combat engineer section carriers.
-"""
+                        A military engineering vehicle or special military equipment is a vehicle built for construction work or for the transportation of combat engineers on the battlefield. These vehicles may be modified civilian equipment (such as the armoured bulldozers that many nations field) or purpose-built military vehicles (such as the AVRE). The first appearance of such vehicles coincided with the appearance of the first tanks, these vehicles were modified Mark V tanks for bridging and mine clearance. Modern military engineering vehicles are expected to fulfill numerous roles, as such they undertake numerous forms, examples of roles include; bulldozers, cranes, graders, excavators, dump trucks, breaching vehicles, bridging vehicles, military ferries, amphibious crossing vehicles, and combat engineer section carriers.
+                        """
             case .mobileSRBMSystem:
                 return """
-A short-range ballistic missile (SRBM) is a ballistic missile with a range of about 1,000 kilometres (620 mi) or less.
-The mobile SRBM system is a military vehicle the main responsibility of which is launching such missiles.
-"""
+                        A short-range ballistic missile (SRBM) is a ballistic missile with a range of about 1,000 kilometres (620 mi) or less.
+                        The mobile SRBM system is a military vehicle the main responsibility of which is launching such missiles.
+                        """
             case .vehiclesAndFuelTanks:
                 return """
-A tank truck, gas truck, fuel truck, or tanker truck (United States usage) or tanker (United Kingdom usage), is a motor vehicle designed to carry liquids or gases on roads. The largest such vehicles are similar to railroad tank cars which are also designed to carry liquid loads. Many variants exist due to the wide variety of liquids that can be transported. Tank trucks tend to be large; they may be insulated or non-insulated; pressurized or non-pressurized; and designed for single or multiple loads (often by means of internal divisions in their tank). Some are semi-trailer trucks. They are difficult to drive and highly susceptible to rollover due to their high center of gravity, and potentially the free surface effect of liquids sloshing in a partially filled tank.[1]
-"""
+                        A tank truck, gas truck, fuel truck, or tanker truck (United States usage) or tanker (United Kingdom usage), is a motor vehicle designed to carry liquids or gases on roads. The largest such vehicles are similar to railroad tank cars which are also designed to carry liquid loads. Many variants exist due to the wide variety of liquids that can be transported. Tank trucks tend to be large; they may be insulated or non-insulated; pressurized or non-pressurized; and designed for single or multiple loads (often by means of internal divisions in their tank). Some are semi-trailer trucks. They are difficult to drive and highly susceptible to rollover due to their high center of gravity, and potentially the free surface effect of liquids sloshing in a partially filled tank.
+                        """
             case .cruiseMissiles:
                 return """
-A cruise missile is a guided missile used against terrestrial or naval targets that remains in the atmosphere and flies the major portion of its flight path at approximately constant speed. Cruise missiles are designed to deliver a large warhead over long distances with high precision. Modern cruise missiles are capable of travelling at high subsonic, supersonic, or hypersonic speeds, are self-navigating, and are able to fly on a non-ballistic, extremely low-altitude trajectory.
-"""
+                        A cruise missile is a guided missile used against terrestrial or naval targets that remains in the atmosphere and flies the major portion of its flight path at approximately constant speed. Cruise missiles are designed to deliver a large warhead over long distances with high precision. Modern cruise missiles are capable of travelling at high subsonic, supersonic, or hypersonic speeds, are self-navigating, and are able to fly on a non-ballistic, extremely low-altitude trajectory.
+                        """
             default:
                 return " "
             }
-
         }
     }
     
@@ -187,21 +186,3 @@ extension Encodable {
         return (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)).flatMap { $0 as? [String: Any] }
     }
 }
-
-//enum Day: Codable {
-//    case integer(Int)
-//    case string(String)
-//
-//    init(from decoder: Decoder) throws {
-//        let container = try decoder.singleValueContainer()
-//        if let x = try? container.decode(Int.self) {
-//            self = .integer(x)
-//            return
-//        }
-//        if let x = try? container.decode(String.self) {
-//            self = .string(x)
-//            return
-//        }
-//        throw DecodingError.typeMismatch(Day.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for Day"))
-//    }
-//}

@@ -27,7 +27,7 @@ struct DatePickerView: View {
                 }
             } label: {
                 Image(systemName: "chevron.left")
-                    .foregroundColor(dateFormatter.string(from: chosenDate) != dateFormatter.string(from: startDate) ? .black : .gray)
+                    .foregroundColor(dateFormatter.string(from: chosenDate) != dateFormatter.string(from: startDate) ? Color("TextColor") : .gray)
                     .padding(.horizontal)
             }
             Spacer()
@@ -42,7 +42,7 @@ struct DatePickerView: View {
                 }
             } label: {
                 Image(systemName: "chevron.right")
-                    .foregroundColor(dateFormatter.string(from: chosenDate) != dateFormatter.string(from: endDate) ? .black : .gray)
+                    .foregroundColor(dateFormatter.string(from: chosenDate) != dateFormatter.string(from: endDate) ? Color("TextColor") : .gray)
                     .padding(.horizontal)
             }
         }

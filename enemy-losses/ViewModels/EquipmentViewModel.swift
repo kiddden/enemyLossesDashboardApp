@@ -22,7 +22,8 @@ class EquipmentViewModel: ObservableObject {
             return equipment.filter { $0.militaryAuto != nil && $0.day <= currentEquipment.day
             }.last?.militaryAuto
         default:
-            return currentEquipment.dict?["\(equipmentType.rawValue)"] as? Int
+            print(currentEquipment.dict)
+            return currentEquipment.dict?[equipmentType.rawValue] as? Int
         }
     }
     func getEquipmentLosses(completion:@escaping ([Equipment]) -> ()) {

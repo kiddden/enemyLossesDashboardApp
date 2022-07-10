@@ -23,14 +23,12 @@ struct MainView: View {
     var body: some View {
         ZStack {
             ZStack {
-//                Rectangle()
-//                    .offset(y: -510)
-//                    .foregroundColor(.indigo)
                 Image("background")
                     .frame(width: 300, height: 300)
                     .opacity(0.1)
                 VStack {
                     Text("🔥ENEMY LOSSES🔥")
+                        .foregroundColor(Color("TextColor"))
                         .bold()
                     DatePickerView(startDate: personnelViewModel.startDate,
                                    endDate: personnelViewModel.endDate,
@@ -41,8 +39,6 @@ struct MainView: View {
                         MainWidgetView(showProgressLine: $showProgressLineOnStart,
                                        personnel: $personnelViewModel.personnel,
                                        date: $chosenDate)
-                        
-                        .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
                         EquipmentLossesListView(widgetTapped: $widgetTapped, date: $chosenDate, showBottomView: $showBottomView)
                     }
                     

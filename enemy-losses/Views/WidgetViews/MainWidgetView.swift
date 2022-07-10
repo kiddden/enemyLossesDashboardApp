@@ -34,13 +34,14 @@ struct MainWidgetView: View {
                     Text("~\(currentDateLoss.wounded) wounded")
                     Text("\(currentDateLoss.POW) imprisoned")
                 }
+                .foregroundColor(Color("TextColor"))
                 .padding()
                 RingView(color1: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1) , color2: #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1), size: 80, percent: CGFloat(currentDateLoss.percent), showProgressLine: $showProgressLine)
                     .padding()
                     
                     
             }
-            .background(.white)
+            .background(Color("WidgetColor"))
             .cornerRadius(20)
             .shadow(radius: 10)
             .padding()

@@ -10,7 +10,6 @@ import SwiftUI
 struct WidgetView: View {
     
     var equipmentName: String
-    var increaseDueToday: Int = 7
     var losses: Int
     
     var body: some View {
@@ -24,29 +23,27 @@ struct WidgetView: View {
                     .opacity(0.7)
                 Image("\(equipmentName)")
                     .resizable()
+                    .foregroundColor(Color("TextColor"))
                     .frame(width: 40, height: 40)
-                //                            .scaledToFit()
-                    .foregroundColor(.black)
+                    
                 
             }
             .padding(.leading, 10)
             VStack(alignment: .leading) {
                 Text(equipmentName.capitalized)
+                    .foregroundColor(Color("TextColor"))
                     .bold()
-//                Text("+\(increaseDueToday)")
-//                    .font(.subheadline)
-//                    .fontWeight(.semibold)
-//                    .foregroundColor(.green)
             }
             Spacer()
             VStack {
                 Text(String(losses))
                 Text("total")
+                    .foregroundColor(Color("TextColor"))
                     .font(.subheadline)
             }
             .padding()
         }
-        .background(.white)
+        .background(Color("WidgetColor"))
         .cornerRadius(15)
         .shadow(radius: 10)
         .padding(.horizontal)
@@ -56,6 +53,6 @@ struct WidgetView: View {
 
 struct WidgetView_Previews: PreviewProvider {
     static var previews: some View {
-        WidgetView(equipmentName: "Aircraft", increaseDueToday: 7, losses: 209)
+        WidgetView(equipmentName: "Aircraft", losses: 209)
     }
 }
