@@ -17,12 +17,15 @@ struct MainWidgetView: View {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter.string(from: date)
     }
+ 
+    
     
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                if let currentDateLoss = personnel.first(where: {$0.date == formattedDate}) {
+        if let currentDateLoss = personnel.first(where: {$0.date == formattedDate}) {
+            HStack {
+                VStack(alignment: .leading) {
+                    
                     Text("Personell")
                     Text("~\(currentDateLoss.totalHumanLosses)")
                     Divider()
@@ -31,16 +34,17 @@ struct MainWidgetView: View {
                     Text("~\(currentDateLoss.wounded) wounded")
                     Text("\(currentDateLoss.POW) imprisoned")
                 }
-            }
-            .padding()
-            RingView(color1: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1) , color2: #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1), size: 80, percent: 75, showProgressLine: $showProgressLine)
                 .padding()
+                RingView(color1: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1) , color2: #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1), size: 80, percent: CGFloat(currentDateLoss.percent), showProgressLine: $showProgressLine)
+                    .padding()
+                    
+                    
+            }
+            .background(.white)
+            .cornerRadius(20)
+            .shadow(radius: 10)
+            .padding()
         }
-        .background(.white)
-        .cornerRadius(20)
-        .shadow(radius: 10)
-        .padding()
-        
     }
 }
 

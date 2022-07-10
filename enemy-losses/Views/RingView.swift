@@ -13,7 +13,7 @@ struct RingView: View {
     var color1 = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
     var color2 = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
     var size: CGFloat = 100
-    var percent: CGFloat = 88
+    var percent: CGFloat
     var multiplier: CGFloat {
         size / 44
     }
@@ -43,9 +43,6 @@ struct RingView: View {
             Text("\(Int(percent))%")
                 .font(.system(size: 14 * multiplier))
                 .fontWeight(.bold)
-                .onTapGesture {
-                    self.showProgressLine.toggle()
-                }
         }
     }
 }

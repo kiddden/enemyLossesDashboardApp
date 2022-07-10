@@ -18,4 +18,10 @@ struct Personnel: Decodable {
     var totalHumanLosses: Int {
         personnel + wounded + POW
     }
+    var percent: Int {
+        (totalHumanLosses*100)/900_000
+    }
+    var detailedInfo: String {
+        "Russia now has more than 400,000 professional \"contract\" soldiers in its 900,000-strong active armed forces."
+    }
 }

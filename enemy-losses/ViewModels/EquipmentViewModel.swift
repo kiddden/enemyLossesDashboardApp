@@ -10,7 +10,7 @@ import Foundation
 class EquipmentViewModel: ObservableObject {
     @Published var equipment: [Equipment] = []
     
-    func getRidOfNans(currentEquipment: Equipment, equipmentType: Equipment.CodingKeys) -> Int? {
+    func getRidOfNans(currentEquipment: Equipment, equipmentType: Equipment.EquipmentCodingKeys) -> Int? {
         switch equipmentType {
         case .fuelTank:
             return equipment.filter { $0.fuelTank != nil && $0.day <= currentEquipment.day

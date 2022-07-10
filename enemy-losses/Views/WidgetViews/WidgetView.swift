@@ -33,10 +33,10 @@ struct WidgetView: View {
             VStack(alignment: .leading) {
                 Text(equipmentName.capitalized)
                     .bold()
-                Text("+\(increaseDueToday)")
-                    .font(.subheadline)
-                    .fontWeight(.semibold)
-                    .foregroundColor(.green)
+//                Text("+\(increaseDueToday)")
+//                    .font(.subheadline)
+//                    .fontWeight(.semibold)
+//                    .foregroundColor(.green)
             }
             Spacer()
             VStack {
