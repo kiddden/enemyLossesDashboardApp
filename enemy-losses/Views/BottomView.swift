@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BottomView: View {
     @Binding var showProgressLine: Bool
-    @Binding var widgetTapped: Equipment.EquipmentCodingKeys
+    @Binding var widgetTapped: Equipment.CodingKeys
     
     var body: some View {
         VStack {

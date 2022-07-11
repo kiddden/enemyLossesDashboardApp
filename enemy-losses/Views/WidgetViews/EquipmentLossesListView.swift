@@ -11,7 +11,7 @@ struct EquipmentLossesListView: View {
     
     
     @StateObject var viewModel = EquipmentViewModel()
-    @Binding var widgetTapped: Equipment.EquipmentCodingKeys
+    @Binding var widgetTapped: Equipment.CodingKeys
     @Binding var date: Date
     @Binding var showBottomView: Bool
     var formattedDate: String {
@@ -23,7 +23,7 @@ struct EquipmentLossesListView: View {
     var body: some View {
         if let currentDateEquipmentLoss = viewModel.equipment.first(where: {$0.date == formattedDate}) {
             VStack {
-                ForEach(Equipment.EquipmentCodingKeys.allCases, id: \.self) { equipmentType in
+                ForEach(Equipment.CodingKeys.allCases, id: \.self) { equipmentType in
                     if equipmentType != .date && equipmentType != .day && equipmentType != .greatestLossesDirection {
                         if let currentLossesDict = viewModel.getRidOfNans(currentEquipment: currentDateEquipmentLoss, equipmentType: equipmentType) {
                             WidgetView(equipmentName: equipmentType.rawValue, losses: currentLossesDict)

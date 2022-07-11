@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @State private var showBottomView = false
-    @State var widgetTapped: Equipment.EquipmentCodingKeys = .aircraft
+    @State var widgetTapped: Equipment.CodingKeys = .aircraft
     @State var bottomViewPosition = CGSize.zero
     @State var showFullBottomView = false
     

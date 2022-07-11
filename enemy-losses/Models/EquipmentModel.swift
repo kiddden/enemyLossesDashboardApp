@@ -28,7 +28,7 @@ struct Equipment: Encodable, Decodable {
     var cruiseMissiles: Int?
     var greatestLossesDirection: String?
     
-    enum EquipmentCodingKeys: String, CodingKey, CaseIterable {
+    enum CodingKeys: String, CodingKey, CaseIterable {
         case date, day, aircraft, helicopter, tank
         case apc = "APC"
         case fieldArtillery = "field artillery"
@@ -128,7 +128,7 @@ struct Equipment: Encodable, Decodable {
     }
     
     init(from decoder : Decoder) throws {
-        let container = try decoder.container(keyedBy: EquipmentCodingKeys.self)
+        let container = try decoder.container(keyedBy: CodingKeys.self)
         do {
             date = try container.decode(String.self, forKey: .date)
             day = try container.decode(Int.self, forKey: .day)
