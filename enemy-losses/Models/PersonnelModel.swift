@@ -11,12 +11,12 @@ struct Personnel: Decodable {
     var date: String
     var day: Int
     var personnel: Int
-    var POW: Int
+    var POW: Int?
     var wounded: Int {
         personnel * 3
     }
     var totalHumanLosses: Int {
-        personnel + wounded + POW
+        personnel + wounded + (POW ?? 0)
     }
     var percent: Int {
         (totalHumanLosses*100)/900_000

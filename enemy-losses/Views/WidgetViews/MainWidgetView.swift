@@ -32,7 +32,9 @@ struct MainWidgetView: View {
                         .frame(width: 120, alignment: .leading)
                     Text("\(currentDateLoss.personnel) killed")
                     Text("~\(currentDateLoss.wounded) wounded")
-                    Text("\(currentDateLoss.POW) imprisoned")
+                    if let pow = currentDateLoss.POW {
+                        Text("\(pow) imprisoned")
+                    }
                 }
                 .foregroundColor(Color("TextColor"))
                 .padding()
