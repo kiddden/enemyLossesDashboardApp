@@ -32,7 +32,7 @@ struct MainView: View {
                         .bold()
                     DatePickerView(startDate: personnelViewModel.startDate,
                                    endDate: personnelViewModel.endDate,
-                                   chosenDate: $chosenDate)
+                                   chosenDate: $chosenDate).id(chosenDate)
                     Divider()
                     Spacer()
                     ScrollView {
