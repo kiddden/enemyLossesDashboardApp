@@ -36,10 +36,12 @@ struct WidgetView: View {
             }
             Spacer()
             VStack {
-                Text(String(losses))
-                Text("total")
+                Text("Total")
                     .foregroundColor(Color("TextColor"))
                     .font(.subheadline)
+                Text(String(losses))
+                    .kerning(0.4)
+                
             }
             .padding()
         }

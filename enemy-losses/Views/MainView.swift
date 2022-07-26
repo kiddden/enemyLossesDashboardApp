@@ -22,13 +22,11 @@ struct MainView: View {
     
     var body: some View {
         ZStack {
+            
             ZStack {
-                Image("background")
-                    .frame(width: 300, height: 300)
-                    .opacity(0.1)
                 VStack {
                     Text("🔥ENEMY LOSSES🔥")
-                        .foregroundColor(Color("TextColor"))
+                        .foregroundColor(.white)
                         .bold()
                     DatePickerView(startDate: personnelViewModel.startDate,
                                    endDate: personnelViewModel.endDate,
@@ -72,12 +70,17 @@ struct MainView: View {
                                 self.bottomViewPosition = .zero
                                 self.showFullBottomView = false
                             }
-                            
-                        }
-                )
-            
-            //            Text("\(bottomViewPosition.height)")
+                        })
         }
+        .background(
+            Image("background")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(maxHeight: 250)
+                .edgesIgnoringSafeArea(.all)
+                .blur(radius: showBottomView ? 20 : 0)
+            , alignment: .top
+        )
         .onReceive(personnelViewModel.$personnel, perform: { _ in
             self.chosenDate = personnelViewModel.endDate
         })
